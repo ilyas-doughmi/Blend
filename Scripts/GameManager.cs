@@ -66,6 +66,7 @@ public class GameManager : NetworkBehaviour
     [ClientRpc]
     void StartGameClientRpc()
     {
-        Debug.Log("GAME HAS STARTED!");
+        GameObject lobby = GameObject.Find("Panel_Lobby");
+        if (lobby != null) lobby.SetActive(false);
     }
 }
