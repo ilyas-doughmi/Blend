@@ -1,6 +1,6 @@
 using UnityEngine;
 using Unity.Netcode;
-using UnityEngine.UI; 
+using UnityEngine.UI;
 
 public class NetworkMenu : MonoBehaviour
 {
@@ -9,20 +9,25 @@ public class NetworkMenu : MonoBehaviour
 
     void Start()
     {
-        
-        hostButton.onClick.AddListener(() => {
-            NetworkManager.Singleton.StartHost();
-            HideButtons(); 
-        });
+        hostButton.onClick.AddListener(StartHost);
+        joinButton.onClick.AddListener(StartClient);
+    }
 
-        joinButton.onClick.AddListener(() => {
-            NetworkManager.Singleton.StartClient();
-            HideButtons();
-        });
+    void StartHost()
+    {
+        NetworkManager.Singleton.StartHost();
+        HideButtons();
+    }
+
+    void StartClient()
+    {
+        NetworkManager.Singleton.StartClient();
+        HideButtons();
     }
 
     void HideButtons()
     {
-        gameObject.SetActive(false); 
+        hostButton.gameObject.SetActive(false);
+        joinButton.gameObject.SetActive(false);
     }
 }
