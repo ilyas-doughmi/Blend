@@ -50,7 +50,10 @@ public class TaskPoint : NetworkBehaviour
         
         meshRenderer.material.color = activeColor;
         
-        Debug.Log("TASK COMPLETED!");
+        if (GameReferee.Instance != null)
+        {
+            GameReferee.Instance.ReportTaskDone();
+        }
     }
 
     
