@@ -29,7 +29,7 @@ public class LobbyUI : NetworkBehaviour
         }
     }
 
-    [ServerRpc(RequireOwnership = false)]
+    [Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Everyone)]
     void HideLobbyServerRpc()
     {
         HideLobbyClientRpc();
