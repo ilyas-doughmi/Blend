@@ -1,6 +1,6 @@
 using UnityEngine;
 using Unity.Netcode;
-using UnityEngine.InputSystem; // Needed for the new system
+using UnityEngine.InputSystem;
 
 public class PlayerAttack : NetworkBehaviour
 {
